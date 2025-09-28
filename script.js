@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Efecto de scroll para el header (ya existía)
+    // Efecto de scroll para el header
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         if (window.scrollY > 50) { // Si se ha desplazado más de 50px
