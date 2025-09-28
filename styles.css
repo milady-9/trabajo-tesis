@@ -193,7 +193,8 @@ nav {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); 
 }
 
-.video-item iframe {
+/* CORRECCIÓN: Aplicar estilos tanto a iframe (por si se usan) como a VIDEO */
+.video-item iframe, .video-item video {
     width: 100%;
     aspect-ratio: 16 / 9; 
     border-radius: 10px 10px 0 0; 
