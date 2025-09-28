@@ -3,99 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MILY PRODUCTIONS - Promoción Turística</title>
+    <title>MILY PRODUCTIONS - Portafolio Audiovisual</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet"> 
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">MILY PRODUCTIONS</div>
+            <a href="#inicio" class="logo-link">
+                <img src="LOGO_MILY[1].png" alt="MILY PRODUCTIONS Logo" class="logo-img">
+                
+                <div class="logo-text">
+                    MILY PRODUCTIONS
+                </div>
+            </a>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#videos">Videos</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#ubicacion">Ubicación</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto">Conectar</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="inicio" class="hero">
+        <section id="inicio" class="hero fullscreen-visual">
             <div class="hero-content">
-                <h1>MILY PRODUCTIONS</h1>
-                <p>El Corazón que no deja de latir.</p>
-                <a href="#videos" class="btn-principal">VER PRODUCCIÓN COMPLETA</a>
-            </div>
+                </div>
         </section>
 
-        <section id="videos" class="seccion">
-            <h2>Productos Audiovisuales</h2>
-            <p>Los siguientes videos te invitan a descubrir la belleza natural y cultural de Balzapamba.</p>
+        <section id="portfolio" class="seccion seccion-portfolio">
+            <h2>NUESTRO PORTFOLIO</h2>
+            <p class="subtitulo">Una muestra de la calidad y la narrativa visual de MILY PRODUCTIONS.</p>
             
             <div class="video-grid">
                 
                 <div class="video-item">
                     <iframe src="TU_ENLACE_EMBED_VIDEO_1" frameborder="0" allowfullscreen></iframe>
-                    <h3>Video 1: Corazón Subtropical (Aventura)</h3>
-                    <p>**Ficha Técnica:** Género Promocional (Digital). **Duración: 3:45 min.** Enfoque en Cascadas y Balnearios.</p>
+                    <h3>Corazón Subtropical</h3>
+                    <p class="ficha-tecnica">Promocional | Balzapamba | Aventura.</p>
                 </div>
 
                 <div class="video-item">
                     <iframe src="TU_ENLACE_EMBED_VIDEO_2" frameborder="0" allowfullscreen></iframe>
-                    <h3>Video 2: Sabores de la Yunga (Gastronomía)</h3>
-                    <p>**Ficha Técnica:** Género Documental Corto. **Duración: 2:10 min.** Enfoque en Gastronomía y Artesanía.</p>
+                    <h3>Título de Video Adicional</h3>
+                    <p class="ficha-tecnica">Documental Corto | Gastronomía Local.</p>
                 </div>
 
                 <div class="video-item">
                     <iframe src="TU_ENLACE_EMBED_VIDEO_3" frameborder="0" allowfullscreen></iframe>
-                    <h3>Video 3: Tradiciones Vivas (Cultura Local)</h3>
-                    <p>**Ficha Técnica:** Género Documental. **Duración: [Duración] min.** Enfoque en [Fiestas/Historia/Gente].</p>
+                    <h3>Tradiciones Vivas</h3>
+                    <p class="ficha-tecnica">Documental | Cultura y Historia.</p>
                 </div>
 
                 <div class="video-item">
                     <iframe src="TU_ENLACE_EMBED_VIDEO_4" frameborder="0" allowfullscreen></iframe>
-                    <h3>Video 4: Balzapamba: Tu Destino (Resumen)</h3>
-                    <p>**Ficha Técnica:** Género Promocional. **Duración: [Duración] min.** Enfoque en [Atractivos Finales/Llamada a la Acción].</p>
+                    <h3>Balzapamba: Tu Destino</h3>
+                    <p class="ficha-tecnica">Resumen | Llamada a la Acción.</p>
+                </div>
+                <div class="video-item">
+                    <iframe src="TU_ENLACE_EMBED_VIDEO_5" frameborder="0" allowfullscreen></iframe>
+                    <h3>[Título de Video Adicional]</h3>
+                    <p class="ficha-tecnica">Ejemplo | Cortometraje.</p>
+                </div>
+                <div class="video-item">
+                    <iframe src="TU_ENLACE_EMBED_VIDEO_6" frameborder="0" allowfullscreen></iframe>
+                    <h3>[Título de Video Adicional 2]</h3>
+                    <p class="ficha-tecnica">Ejemplo | Eventos.</p>
                 </div>
             </div>
-            </section>
+        </section>
         
-        <section id="ubicacion" class="seccion destacado-grid">
-            <h2>Ubicación: ¿Cómo llegar a Balzapamba?</h2>
+        <section id="ubicacion" class="seccion seccion-info">
+            <h2>LOCACIONES CLAVE</h2>
             <div class="destacado-container">
                 
                 <div class="destacado-card card-mapa">
                     <h3>MAPA INTERACTIVO</h3>
-                    <p>Balzapamba se encuentra en la provincia de Bolívar, conectando la sierra con la costa. ¡Un paraíso subtropical esperando!</p>
-                    <div style="background-color: #f0f0f0; height: 100%; border-radius: 8px; overflow: hidden;">
+                    <p>Balzapamba: la provincia de Bolívar, conectando la sierra con la costa.</p>
+                    <div class="mapa-iframe">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1021421.3662584105!2d-79.67137812536832!3d-1.740201201977755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d37b6c59d186c3%3A0x8efb3e83921960d7!2sSan%20Miguel%20de%20Bol%C3%ADvar!5e0!3m2!1ses!2sec!4v1700000000000!5m2!1ses!2sec" 
                             width="100%" 
-                            height="200" 
-                            style="border:0; margin-top: -30px;" 
+                            height="100%" 
+                            style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy">
                         </iframe>
                     </div>
-                    <a href="https://maps.app.goo.gl/TU_ENLACE_A_BALZAPAMBA" target="_blank" class="btn-secundario-invertido">VER EN GOOGLE MAPS</a>
+                    <a href="google.com/maps?sca_esv=b6b0734220a77ce1&rlz=1C1FKPE_esEC1169EC1169&output=search&q=balzapamba&source=lnms&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQht6_BFq6vBIoFFRK7qchKBv8IM7dq8CEqHDU3BN7lbnCpsvCvU63fDXNLh1Cq1fv0rMev-IeypcHbjdADHY7pi7GoCtPX4S5eVXeDYVbA5RTkdc-w73nm3CBykURaG3YzZ3uvRx4L4E7ba4xogWzFuY4gOm7g044QgqQODw-u60xvVG8Ma3HBBCl6wWmIP_x3uuUfg&entry=mc&ved=1t:200715&ictx=111" target="_blank" class="btn-acento">VER EN GOOGLE MAPS</a>
                 </div>
                 
                 <div class="destacado-card card-campo">
                     <h3>GALERÍA DE CAMPO</h3>
                     <p>Documentación fotográfica de las locaciones clave: Río Cristal, Cascada Milagrosa y el Museo Bastión Andino.</p>
-                    <a href="#" class="btn-secundario-invertido">EXPLORAR LOCACIONES</a>
+                    <a href="#" class="btn-acento">EXPLORAR FOTOS</a>
                 </div>
 
             </div>
         </section>
         
-        <section id="contacto" class="seccion">
-            <h2>Contacto</h2>
-            <p>Para más información sobre este proyecto audiovisual o sobre la comunidad de Balzapamba:</p>
-            <p>Email: <a href="mailto:alombiedah3@unemi.edu.ec">alombiedah3@unemi.edu.ec</a></p>
-            <p><strong>Angelly Lombeida de Sanchez</strong> | Proyecto de Producción Audiovisual [2025]</p>
+        <section id="contacto" class="seccion seccion-connect">
+            <h2>CONECTEMOS</h2>
+            <p class="subtitulo">Estamos listos para contar tu próxima historia.</p>
+            <p class="email-contacto">Email: <a href="mailto:alombiedah3@unemi.edu.ec">alombiedah3@unemi.edu.ec</a></p>
+            <p class="creditos">Angelly Lombeida de Sanchez | MILY PRODUCTIONS [2025]</p>
         </section>
     </main>
 
