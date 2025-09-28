@@ -1,9 +1,9 @@
 /* VARIABLES Y RESET BÁSICO */
 :root {
-    --color-principal: #34A853; /* Verde Vivo, estilo de viajes y naturaleza */
-    --color-secundario: #f1f1f1; /* Gris muy claro para secciones de fondo */
-    --color-texto: #8a3838;
-    --color-oscuro: #1b1b1b; /* Negro profundo para el header */
+    --color-principal: #c20d34; /* Verde Vivo (Acento) */
+    --color-secundario: #f1f1f1; /* Gris muy claro (Fondo secciones) */
+    --color-texto: #000000; /* Gris oscuro (Texto principal) */
+    --color-oscuro: #c023c5; /* Negro profundo (Header y Footer) */
     --font-principal: 'Montserrat', sans-serif;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/* ENCABEZADO Y NAVEGACIÓN */
+/* ENCABEZADO Y NAVEGACIÓN (AHORA CENTRADO) */
 /* -------------------------------------------------------------------------- */
 header {
     background: var(--color-oscuro);
@@ -34,8 +34,10 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    /* Centramos el contenido del nav */
+    justify-content: center;
     align-items: center;
+    flex-direction: column; /* Apilamos logo y enlaces */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -44,11 +46,17 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
+    width: 100%;
+    text-align: center; /* Centra el texto del logo */
+    margin-bottom: 10px; 
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    justify-content: center; /* Centra la lista de enlaces */
+    padding: 0;
+    flex-wrap: wrap; 
 }
 
 nav ul li a {
@@ -63,16 +71,21 @@ nav ul li a:hover {
 }
 
 /* -------------------------------------------------------------------------- */
-/* SECCIÓN HERO (INICIO - AHORA CON IMAGEN DE FONDO) */
+/* SECCIÓN HERO (PORTADA) */
 /* -------------------------------------------------------------------------- */
 .hero {
     position: relative;
     height: 90vh; 
-    /* ... otras propiedades ... */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
 
-    /* ----- ESTA ES LA LÍNEA CLAVE CON TU IMAGEN DE INTERNET ----- */
+    /* URL de la imagen de Turisec */
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://www.turisec.com/wp-content/uploads/2024/01/parque-1-scaled.jpg');
-    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -82,7 +95,7 @@ nav ul li a:hover {
     position: relative;
     z-index: 5; 
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.2); /* Sutil fondo para el texto */
+    background-color: rgba(0, 0, 0, 0.2); 
     border-radius: 8px;
 }
 
@@ -138,7 +151,7 @@ nav ul li a:hover {
     padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
+    text-align: center; /* Centra todos los títulos h2 y párrafos */
 }
 
 .seccion h2 {
@@ -151,7 +164,7 @@ nav ul li a:hover {
     background-color: var(--color-secundario);
 }
 
-/* Video Grid (Sección Videos - Estilo Tarjeta) */
+/* Video Grid (Sección Videos) */
 .video-grid {
     display: flex;
     gap: 30px;
@@ -162,7 +175,7 @@ nav ul li a:hover {
 .video-item {
     width: 100%;
     max-width: 550px;
-    text-align: left;
+    text-align: left; /* Mantenemos el texto DENTRO del item a la izquierda */
     background-color: white;
     padding: 0; 
     border-radius: 12px;
@@ -193,7 +206,7 @@ nav ul li a:hover {
 }
 
 /* -------------------------------------------------------------------------- */
-/* SECCIÓN DE CONTENIDO DESTACADO (Bloques estilo Viajes) */
+/* SECCIÓN DE CONTENIDO DESTACADO (Ubicación y Galería) */
 /* -------------------------------------------------------------------------- */
 .destacado-grid {
     padding: 80px 20px;
@@ -214,7 +227,7 @@ nav ul li a:hover {
     padding: 40px 30px;
     border-radius: 12px;
     color: white;
-    text-align: center;
+    text-align: center; /* <-- Esto centra los títulos y el texto en las tarjetas */
     background-size: cover;
     background-position: center;
     min-height: 250px;
@@ -236,94 +249,4 @@ nav ul li a:hover {
 }
 
 .destacado-card p {
-    margin: 10px 0 20px;
-    text-shadow: 1px 1px 2px #000;
-}
-
-/* Fondos específicos para las tarjetas - REEMPLAZAR CON TUS PROPIAS IMÁGENES */
-.card-metodologia {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('IMAGEN/DE/FONDO/PARA/METODOLOGIA.jpg');
-}
-
-.card-campo {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('IMAGEN/DE/FONDO/PARA/CASCADA.jpg');
-}
-
-/* Botón invertido para contraste sobre la imagen */
-.btn-secundario-invertido {
-    display: inline-block;
-    background: white;
-    color: var(--color-principal);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 700;
-    transition: background 0.3s;
-}
-
-.btn-secundario-invertido:hover {
-    background: var(--color-principal);
-    color: white;
-}
-
-/* Contenido de Análisis */
-.analisis-content {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.analisis-box {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    max-width: 500px;
-    text-align: center;
-}
-
-/* -------------------------------------------------------------------------- */
-/* FOOTER */
-/* -------------------------------------------------------------------------- */
-footer {
-    background: var(--color-oscuro);
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 0.9rem;
-}
-
-/* -------------------------------------------------------------------------- */
-/* MEDIA QUERIES (Responsivo) */
-/* -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-    .hero {
-        height: 60vh;
-    }
-    nav {
-        flex-direction: column;
-    }
-    nav ul {
-        margin-top: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    nav ul li a {
-        padding: 0.5rem 0.5rem;
-        font-size: 0.9rem;
-    }
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .hero p {
-        font-size: 1.1rem;
-    }
-    .destacado-card {
-        min-height: 200px;
-    }
-    .destacado-card h3 {
-        font-size: 1.5rem;
-    }
-}
+    margin:
