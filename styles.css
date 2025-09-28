@@ -92,14 +92,15 @@ nav {
     letter-spacing: 2px;
 }
 
-nav ul {
+/* Estilos de escritorio: el menú es horizontal */
+.nav-menu {
     list-style: none;
     display: flex;
     padding: 0;
     font-weight: 400;
 }
 
-nav ul li a {
+.nav-menu li a {
     color: var(--color-texto-claro);
     text-decoration: none;
     padding: 0.7rem 1.4rem; 
@@ -109,7 +110,7 @@ nav ul li a {
     letter-spacing: 1px;
 }
 
-nav ul li a:hover {
+.nav-menu li a:hover {
     color: var(--color-principal);
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -341,22 +342,84 @@ footer {
 }
 
 /* -------------------------------------------------------------------------- */
-/* MEDIA QUERIES (Responsivo) */
+/* MEDIA QUERIES (Responsivo con Menú Hamburguesa) */
 /* -------------------------------------------------------------------------- */
+/* Estilos del botón de la hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px auto;
+    background-color: var(--color-principal); /* Color Coral */
+    transition: all 0.3s ease-in-out;
+}
+
 @media (max-width: 900px) {
-    nav {
-        flex-direction: column;
-        padding: 1rem 20px; /* Ajuste el padding lateral para no apretar */
-        background-color: var(--color-fondo);
+    /* ------------------- NAVEGACIÓN (MÓVIL) ------------------- */
+    
+    /* Mostrar el botón de la hamburguesa */
+    .menu-toggle {
+        display: block;
     }
+    
+    /* Posicionamiento del logo y el botón */
+    nav {
+        flex-direction: row; /* Mantiene logo y toggle horizontalmente */
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 20px;
+    }
+
+    /* Ocultar el menú por defecto y prepararlo para la animación */
+    .nav-menu {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        background-color: var(--color-card); /* Fondo para que se destaque */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px 0;
+    }
+
+    /* Clase que se activa con JS para mostrar el menú */
+    .nav-menu.open {
+        display: flex;
+    }
+
+    /* Estilo de los elementos de lista para el menú vertical */
+    .nav-menu li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 1rem 20px;
+        font-size: 1.1rem;
+        border-radius: 0;
+    }
+    
+    /* Ajustes visuales para el logo */
     .logo-link {
-        flex-direction: column; /* Apila el logo y el texto en móvil */
-        margin-bottom: 10px;
+        flex-direction: row; /* Mantiene el logo y el texto juntos en la misma línea */
+        margin-bottom: 0;
     }
     .logo-img {
-        height: 50px; /* Tamaño más pequeño en móvil */
-        margin-right: 0;
-        margin-bottom: 5px;
+        height: 50px;
+        margin-right: 10px; /* Pequeño margen */
+        margin-bottom: 0;
     }
     .logo-text {
         font-size: 1.4rem;
@@ -366,29 +429,17 @@ footer {
     .logo-text strong {
         margin-left: 5px;
     }
-    
-    /* CORRECCIÓN CLAVE: Navegación en móvil */
-    nav ul {
-        justify-content: center;
-        flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
-        margin-top: 10px;
-    }
-    nav ul li a {
-        padding: 0.5rem 0.8rem; /* Reduce el espacio interno de los botones */
-        font-size: 0.9rem; /* Reduce el tamaño de la fuente */
-    }
-    
-    /* Corrección de espaciado general */
+
+    /* ------------------- SECCIONES Y CONTENIDO ------------------- */
     .seccion {
         padding: 60px 20px;
     }
     .seccion h2 {
         font-size: 2.5rem;
     }
-    .subtitulo { /* Reducido para ahorrar espacio */
+    .subtitulo {
         margin-bottom: 30px; 
     }
-    
     .fullscreen-visual {
         box-shadow: none;
         background-position: center center; 
@@ -398,13 +449,14 @@ footer {
         gap: 25px;
     }
     
-    /* CORRECCIÓN CLAVE: Tarjetas de Ubicación/Info */
+    /* Tarjetas de Ubicación/Info */
     .destacado-card {
-        width: 100%; /* Asegura que la tarjeta ocupe el ancho completo */
-        max-width: none; /* Elimina la restricción de 600px en móvil */
-        padding: 30px 20px; /* Reduce el padding interno */
+        width: 100%;
+        max-width: none;
+        padding: 30px 20px;
+        min-height: 400px; /* Ajuste para móvil */
     }
     .card-campo h3 {
-        font-size: 2rem; /* Reduce el tamaño del título de la galería */
+        font-size: 2rem;
     }
 }
