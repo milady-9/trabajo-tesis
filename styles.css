@@ -193,13 +193,14 @@ nav {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); 
 }
 
-/* CORRECCIÓN: Aplicar estilos tanto a iframe (por si se usan) como a VIDEO */
+/* IMPORTANTE: Aplica estilos tanto a iframe (mapa) como a VIDEO (portafolio) */
 .video-item iframe, .video-item video {
     width: 100%;
     aspect-ratio: 16 / 9; 
     border-radius: 10px 10px 0 0; 
     display: block;
 }
+
 
 .video-item h3 {
     padding: 20px 20px 5px;
@@ -247,8 +248,11 @@ nav {
 .card-mapa {
     background-image: none;
     background-color: white; 
-    color: var(--color-texto); 
+    color: var(--color-fondo); /* Texto negro sobre fondo blanco */
     box-shadow: var(--sombra-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .card-mapa h3 {
     color: var(--color-principal); 
@@ -264,6 +268,12 @@ nav {
     overflow: hidden;
     margin: 20px 0;
 }
+.mapa-iframe iframe {
+    width: 100%;
+    height: 100%;
+    display: block; /* Asegura que no haya espacios extra */
+}
+
 
 .card-campo {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('IMAGEN/DE/FONDO/PARA/CASCADA.jpg');
@@ -310,24 +320,74 @@ footer {
     border-top: 1px solid #333;
 }
 
+/* --- CORRECCIÓN: ESTILOS PARA LA GALERÍA DE CAMPO --- */
+
+/* 1. Resetear el fondo de la tarjeta */
+.destacado-card.card-campo {
+    /* Quita la imagen de fondo de la tarjeta para que se vean las fotos insertadas */
+    background-image: none;
+    background-color: var(--color-card); 
+    /* Ajusta la alineación de los elementos */
+    justify-content: flex-start; 
+}
+
+/* 2. Estilo del Contenedor de las Fotos (Crea la Cuadrícula) */
+.galeria-fotos {
+    display: grid;
+    /* Organiza las fotos en 3 columnas iguales */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 25px 0 40px;
+}
+
+/* 3. Estilo de la Imagen y la Leyenda */
+.galeria-fotos figure {
+    background-color: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.galeria-fotos .foto-galeria {
+    width: 100%;
+    height: 120px; /* Altura fija para un aspecto uniforme */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    transition: transform 0.3s;
+}
+
+.galeria-fotos figure:hover .foto-galeria {
+    transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
+}
+
+.galeria-fotos figcaption {
+    font-size: 0.85rem;
+    color: var(--color-principal);
+    padding: 8px 5px;
+    font-weight: 700;
+}
+
+/* 4. Ajuste para títulos en esta tarjeta */
+.card-campo h3 {
+    margin-bottom: 5px;
+}
+
 /* -------------------------------------------------------------------------- */
 /* MEDIA QUERIES (Responsivo - Pantallas Pequeñas) */
 /* -------------------------------------------------------------------------- */
 @media (max-width: 900px) {
     
-    /* CORRECCIÓN CLAVE PARA MOSTRAR LA IMAGEN EN MÓVIL */
     .fullscreen-visual {
-        background-attachment: scroll; /* Deshabilita el fixed que causa el problema */
-        background-position: center center; /* Centra la imagen para que se vea mejor */
+        background-attachment: scroll; 
+        background-position: center center; 
     }
 
     /* 1. NAVEGACIÓN Y HAMBURGUESA */
     
     .menu-toggle {
-        display: block; /* Muestra el botón de la hamburguesa */
+        display: block; 
     }
     
-    /* Reorganiza el header para que logo y hamburguesa estén a los lados */
     nav {
         flex-direction: row; 
         justify-content: space-between;
@@ -336,13 +396,12 @@ footer {
         background-color: var(--color-fondo);
     }
     
-    /* Oculta y posiciona el menú de navegación */
     .nav-menu {
-        display: none; /* Oculto por defecto */
+        display: none; 
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 100%; /* Se despliega justo debajo del header */
+        top: 100%; 
         left: 0;
         background-color: var(--color-card); 
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
@@ -350,12 +409,10 @@ footer {
         padding: 10px 0;
     }
 
-    /* Clase que se activa con JS para MOSTRAR el menú */
     .nav-menu.open {
         display: flex;
     }
 
-    /* Estilo de los enlaces para el menú vertical (ocupan el ancho completo) */
     .nav-menu li {
         text-align: center;
         width: 100%;
@@ -368,22 +425,21 @@ footer {
         border-radius: 0;
     }
     
-    /* 2. LOGO EN UNA SOLA LÍNEA EN MÓVIL */
+    /* 2. LOGO EN MÓVIL */
     
-    /* Vuelve a poner el logo y el texto lado a lado */
     .logo-link {
         flex-direction: row; 
-        align-items: center; /* Alineación vertical al centro */
+        align-items: center; 
         margin-bottom: 0;
     }
     .logo-img {
-        height: 40px; /* Tamaño más pequeño */
-        margin-right: 5px; /* Espacio reducido */
+        height: 40px; 
+        margin-right: 5px; 
         margin-bottom: 0; 
     }
     .logo-text {
-        font-size: 0.9rem; /* Reducido para caber en una línea */
-        letter-spacing: 1px; /* Espaciado reducido */
+        font-size: 0.9rem; 
+        letter-spacing: 1px; 
         margin-top: 0;
     }
     .logo-text strong {
@@ -393,7 +449,7 @@ footer {
     }
 
 
-    /* 3. AJUSTES GENERALES DE SECCIÓN (Para evitar overflow) */
+    /* 3. AJUSTES GENERALES */
     
     .seccion {
         padding: 60px 20px;
@@ -413,5 +469,94 @@ footer {
         max-width: none;
         padding: 30px 20px;
         min-height: 400px;
+    }
+}/* ... [TODO TU CÓDIGO CSS ANTERIOR AQUÍ] ... */
+
+/* -------------------------------------------------------------------------- */
+/* NUEVOS ESTILOS PARA EL LIGHTBOX (MODAL DE FOTOS) */
+/* -------------------------------------------------------------------------- */
+
+.lightbox {
+    display: none; /* Oculto por defecto */
+    position: fixed; 
+    z-index: 2000; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.95); /* Fondo muy oscuro con transparencia */
+    transition: opacity 0.3s;
+    /* Evita que se pueda hacer scroll en el fondo */
+    user-select: none;
+    cursor: pointer; 
+}
+
+.lightbox-content {
+    position: relative;
+    margin: 5% auto; /* Centrar verticalmente y un poco hacia abajo */
+    padding: 0;
+    width: 90%; 
+    max-width: 1200px;
+    text-align: center;
+    cursor: default; /* El contenido no tiene el cursor de cierre */
+}
+
+.lightbox-image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 85vh; /* Máximo 85% de la altura de la ventana */
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+    animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 60px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 2001;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: var(--color-principal); /* Color de acento al pasar el mouse */
+}
+
+.lightbox-caption {
+    margin-top: 15px;
+    color: #ccc;
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* MEDIA QUERY PARA EL LIGHTBOX EN MÓVIL */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .lightbox-close {
+        font-size: 40px;
+        top: 10px;
+        right: 15px;
+    }
+    .lightbox-content {
+        margin: 20% auto;
+    }
+    .lightbox-image {
+        max-height: 70vh;
     }
 }

@@ -123,8 +123,32 @@
                 
                 <div class="destacado-card card-campo">
                     <h3>GALERÍA DE CAMPO</h3>
-                    <p>Documentación fotográfica de las locaciones clave: Río Cristal, Cascada Milagrosa y el Museo Bastión Andino.</p>
-                    <a href="#" class="btn-acento">EXPLORAR FOTOS</a>
+                    <p>Una muestra de las locaciones clave: Río Cristal, Cascada Milagrosa y el Museo Bastión Andino.</p>
+                    
+                    <div class="galeria-fotos">
+                        <figure>
+                            <a href="#" onclick="openLightbox('FOTO 2.jpg', 'Río Cristal'); return false;">
+                                <img src="FOTO 2.jpg" alt="Río Cristal Balzapamba" class="foto-galeria">
+                            </a>
+                            <figcaption>Río Cristal</figcaption>
+                        </figure>
+
+                        <figure>
+                            <a href="#" onclick="openLightbox('FOTO 3.jpg', 'Cascada Milagrosa'); return false;">
+                                <img src="FOTO 3.jpg" alt="Cascada Milagrosa Balzapamba" class="foto-galeria">
+                            </a>
+                            <figcaption>Cascada Milagrosa</figcaption>
+                        </figure>
+
+                        <figure>
+                            <a href="#" onclick="openLightbox('FOTO 4.jpg', 'Museo Bastión Andino'); return false;">
+                                <img src="FOTO 4.jpg" alt="Museo Bastión Andino" class="foto-galeria">
+                            </a>
+                            <figcaption>Museo Bastión Andino</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <a href="#" class="btn-acento">VER MÁS FOTOS</a>
                 </div>
 
             </div>
@@ -137,6 +161,14 @@
             <p class="creditos">Angelly Lombeida de Sanchez | MILY PRODUCTIONS [2025]</p>
         </section>
     </main>
+    
+    <div id="lightbox-modal" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="lightbox-image">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
 
     <footer>
         <p>© 2025 MILY PRODUCTIONS. Todos los derechos reservados.</p>
