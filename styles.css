@@ -361,25 +361,28 @@ footer {
         border-radius: 0;
     }
     
-    /* 2. LOGO MONTADO EN MÓVIL */
+    /* 2. LOGO EN UNA SOLA LÍNEA EN MÓVIL */
     
-    /* Apila la imagen y el texto del logo (montado) */
+    /* Vuelve a poner el logo y el texto lado a lado */
     .logo-link {
-        flex-direction: column; 
-        align-items: flex-start; 
+        flex-direction: row; 
+        align-items: center; /* Alineación vertical al centro */
         margin-bottom: 0;
     }
     .logo-img {
-        height: 50px;
-        margin-right: 0; 
-        margin-bottom: 3px; 
+        height: 40px; /* Tamaño más pequeño */
+        margin-right: 5px; /* Espacio reducido */
+        margin-bottom: 0; 
     }
     .logo-text {
-        font-size: 1.2rem; 
-        letter-spacing: 1px;
+        font-size: 0.9rem; /* ¡CLAVE! Reducido para caber en una línea */
+        letter-spacing: 1px; /* Espaciado reducido */
+        margin-top: 0;
     }
     .logo-text strong {
+        font-size: 1rem; /* Pequeño ajuste para el strong */
         margin-left: 3px;
+        letter-spacing: 0.5px;
     }
 
 
